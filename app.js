@@ -1,11 +1,15 @@
 const express = require('express');
+const morgan = require('morgan'); 
 
 const app = express();
 
+//bring in routes
+const postRoute = require("./routes/post");
 
-app.get("/", (req, res) => {
-    res.send("Hello World From Here"); 
-});
+//Midleware
+
+app.use(morgan("dev"));
+app.use("/", postRoute );
 
 
 const port = 8080;
