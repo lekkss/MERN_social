@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 const morgan = require('morgan'); 
-
+ 
 const app = express();
 
 
@@ -20,6 +21,7 @@ const postRoute = require("./routes/post");
 //Midleware
 
 app.use(morgan("dev"));
+app.use(bodyParser.json());
 app.use("/", postRoute );
 
 
