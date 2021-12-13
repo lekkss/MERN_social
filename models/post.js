@@ -4,13 +4,13 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
-        require: "Title is Requires",
+        require: true,
         minlength: 4,
         maxlength: 150,
     },
-    title: {
+    body: {
         type: String,
-        require: "Body is Requires",
+        require: true,
         minlength: 4,
         maxlength: 2000 ,
     }
